@@ -1,1 +1,89 @@
-/* You can add global styles to this file, and also import other style files */
+/* || Modèle page */
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.page-content {
+    flex: 1; /** récupère l'espace disponible restant **/
+}
+
+/* || Accueil */
+body {
+	width:100%;
+}
+
+.newWidth {
+	width: 70%;
+	margin: 0;
+}
+
+.card img {
+	width : 200px;
+}
+
+.column {
+	flex-direction: column;
+}
+
+.centered {
+	justify-content: center;
+	align-items: center;
+}
+
+h1 {
+	text-align: center;
+	margin-top: 30px;
+}
+
+.noBorder > card {
+	border: none;
+}
+
+.between {
+	justify-content: space-between;
+}
+
+thead th, h2, h1 {
+	text-transform: uppercase;
+}
+
+td, th {
+	text-align: center;
+}
+
+.bckgrdCom {
+	background-color: rgb(196, 221, 255);
+}
+
+.logopnr img {
+	width: 30px;
+}
+
+/* || menu */
+.sizeLogo {
+	max-width: 100px;
+}
+
+/* || footer */
+.footer-first
+{
+    background-color: #D4ECDD;
+    color: #112031;
+}
+
+.footer-first li 
+{
+    list-style: none;
+}
+
+.footer-second
+{
+    background-color: #345B63;
+}
+
+.footer-second > img 
+{
+    margin: 15px;
+}
