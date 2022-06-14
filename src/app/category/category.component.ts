@@ -3,7 +3,6 @@ import { Article } from '../article';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
-
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
