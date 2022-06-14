@@ -1,3 +1,10 @@
+/* || Couleur par défaut */
+:root {
+  --main-color:#5271ff;
+  --main-footer:#345B63;;
+}
+
+
 /* || Modèle page */
 .page {
   display: flex;
@@ -68,7 +75,19 @@ width: 30px;
 
 /* || menu */
 .sizeLogo {
-max-width: 100px;
+  max-width: 60px;
+}
+
+.radiusBorder {
+  border-radius: 5px;
+}
+
+.bckColor {
+  background-color: var(--main-color);
+}
+
+.mainColor {
+  color: var(--main-color);
 }
 
 /* || footer */
@@ -78,6 +97,11 @@ max-width: 100px;
   color: #112031;
 }
 
+.maxSize {
+  max-width: 100px;
+  max-height: 100px;
+}
+
 .footer-first li
 {
   list-style: none;
@@ -85,7 +109,7 @@ max-width: 100px;
 
 .footer-second
 {
-  background-color: #345B63;
+  background-color: var(--main-footer);
 }
 
 .footer-second > img
