@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'inscription', component: InscriptionComponent },
   { path: 'article/:categorie', component: CategoryComponent },
   { path: 'home',  component: HomeComponent },
-  { path: "/panier", component: PanierComponent}
+  { path: 'panier', component: PanierComponent}
 ];
 
 @NgModule({

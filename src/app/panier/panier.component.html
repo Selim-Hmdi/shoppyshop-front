@@ -1,0 +1,7 @@
+<div class="d-flex flex-column">
+    <div *ngFor="let l of lignes" class=" p-2 m-2 w-25 ligne-container">
+        <h4>{{l.article.marque}}</h4>
+        <span>{{l.article.description}}</span> 
+        <span class="ligne-prix">{{l.quantite}} fois {{l.article.prix}}€</span>
+    </div>
+</div>
