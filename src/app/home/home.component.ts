@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http/http';
+import { HttpClient } from '@angular/common/http';
 import { Article } from '../article';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,8 +10,10 @@ import { Article } from '../article';
 })
 export class HomeComponent implements OnInit {
   articles: Array<Article>;
+  searchText: any;
   url: string = "http://localhost:8080/articles/";
-  constructor(private http: HttpClient) { }
+  unique: Array<any>;
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
     this.http.get<Array<Article>>(this.url).subscribe(response => {
@@ -18,6 +21,10 @@ export class HomeComponent implements OnInit {
     }, err => {
       console.log("ko server");
     });
+    for (let article of this.articles.values()) {
+      this.unique = Array.from(new Set(article.categorie));
+      console.log(this.unique);
+    }
   }
 
 }

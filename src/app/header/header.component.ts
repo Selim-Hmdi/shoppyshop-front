@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Article } from '../article';
 
 @Component({
   selector: 'app-header',
@@ -7,11 +7,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor(private router: Router) {  }
+  categorie: string;
+  articles: Array<Article>;
+  searchText: any;
+  constructor() {  }
 
   ngOnInit(): void {
-    this.router.navigate(['']);
   }
 
+  logout() {
+
+  }
 }

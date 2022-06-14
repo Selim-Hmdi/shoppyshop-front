@@ -1,0 +1,15 @@
+<div class="d-flex column between centered pb-4 pt-4">
+  <h2>Tous nos articles "{{ categorie }}"</h2>
+  <div class="noBorder card-deck justify-content-center d-flex">
+    <div *ngFor="let article of articles">
+      <div class="card d-flex centered sizeArticle">
+        <h3 class="card-head">{{ article.marque.toUpperCase() }}</h3>
+        <img [src]="'/assets/' + article.imageUrl" [alt]="'image de ' + article.description" class="card-img-top d-flex centered">
+        <p>{{ article.description }}</p>
+        <div class="d-flex logopnr between align-items-center">
+          <p class="card-text font-weight-bold">{{ article.prix }} €</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
