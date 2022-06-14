@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
+import { CategoryComponent } from './category/category.component';
+import { FilterPipePipe } from './filter-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { InscriptionComponent } from './inscription/inscription.component';
     FooterComponent,
     HomeComponent,
     ConnexionComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    CategoryComponent,
+    FilterPipePipe
   ],
   imports: [
     BrowserModule,

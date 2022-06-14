@@ -1,7 +1,20 @@
 <div class="d-flex column between centered pb-4 pt-4">
+  <div class="d-flex mb-5 justify-content-around">
+    <div class="d-flex">
+      <div class="nav-item" *ngFor="let article of articles">
+          <a class="nav-link mainColor" [routerLink]="['/article/', article.categorie]">{{ article.categorie }}</a>
+      </div>
+      <div class="nav-item">
+          <a class="nav-link mainColor" [routerLink]="['/article/', unique]">{{ unique }}</a>
+      </div>
+    </div>
+    <div class="form-inline d-flex">
+      <input class="form-control mr-sm-2 mr-3" type="text" [(ngModel)]="searchText" placeholder="Rechercher">
+    </div>
+  </div>
   <h1>Tous nos articles</h1>
   <div class="noBorder card-deck justify-content-center d-flex">
-      <div *ngFor="let article of articles">
+      <div *ngFor="let article of articles | filter: searchText">
           <div class="card d-flex centered sizeArticle">
             <h3 class="card-head">{{ article.marque.toUpperCase() }}</h3>
             <img [src]="'/assets/' + article.imageUrl" [alt]="'image de ' + article.description" class="card-img-top d-flex centered">
