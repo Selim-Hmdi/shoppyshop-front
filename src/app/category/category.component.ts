@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Article } from '../article';
 import { ActivatedRoute } from '@angular/router';
-import { HttpClient } from '@angular/common/http/http';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-category',
