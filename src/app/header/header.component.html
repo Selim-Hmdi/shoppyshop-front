@@ -1,16 +1,14 @@
 <header>
-	<div class="menu bckgColor p-0">
-	    <nav class="navbar navbar-expand-lg navbar-light bg-light p-0">
-	        <div class="container-fluid p-0">
+	<div class="menu bckColor p-0">
+	    <nav class="navbar navbar-expand-lg navbar-light bckColor p-0">
+	        <div class="container-fluid mr-2">
 	            <a class="navbar-brand p-0" routerLink="/">
-                    <img src="/assets/picture/logo-pf.png" alt="logo ShoppyShop" class="nav-link sizeLogo">
-                </a>
+                  <img src="/assets/picture/logo-pf.png" alt="logo ShoppyShop" class="nav-link radiusBorder sizeLogo p-0 m-1">
+              </a>
 	            <ul class="nav justify-content-end">
-	                <li class="nav-item"><a class="nav-link" routerLink="/connexion">Se Connecter</a></li>
-						<li class="nav-item"><a class="nav-link" href="panier.jsp">Mon panier</a></li>
-						<form action="logout" method="post">
-						    <button class="btn btn-outline-danger" type="submit">Déconnexion</button>
-						</form>
+                <li class="nav-item"><a class="nav-link text-white" routerLink="/connexion">Se Connecter</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="panier.jsp">Mon panier</a></li>
+                  <button class="btn btn-outline-danger text-white" (click)="logout()">Déconnexion</button>
 	            </ul>
 	        </div>
 	    </nav>
