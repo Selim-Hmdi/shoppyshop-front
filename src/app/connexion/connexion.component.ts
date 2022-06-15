@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserserviceService } from '../userservice.service';
 import { Router } from '@angular/router';
 import { User } from '../user';
+import { UserserviceService } from '../userservice.service';
 
 @Component({
   selector: 'app-connexion',
@@ -22,6 +22,8 @@ export class ConnexionComponent implements OnInit {
     this.userService.getUserByEmailAndPassword(this.email, this.password).subscribe(
       data => {
         this.user = data;
+        let currentUser = JSON.stringify(this.user);
+        sessionStorage.setItem("user", currentUser);
         console.log(this.user);
         this.goToHomePage();
       }, (error) => {
@@ -36,5 +38,6 @@ export class ConnexionComponent implements OnInit {
   goToHomePage() {
     this.router.navigate(['']);
   }
+
 }
 
