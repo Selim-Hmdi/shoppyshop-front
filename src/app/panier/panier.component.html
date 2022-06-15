@@ -1,7 +1,31 @@
-<div class="d-flex flex-column">
-    <div *ngFor="let l of lignes" class=" p-2 m-2 w-25 ligne-container">
-        <h4>{{l.article.marque}}</h4>
-        <span>{{l.article.description}}</span> 
-        <span class="ligne-prix">{{l.quantite}} fois {{l.article.prix}}€</span>
+<div class="d-flex column centered w-80 pt-4 pb-4">
+  <div class="d-flex centered w-100 pl-4 pr-4">
+    <div class="w-100">
+      <div class="d-flex w-100 centered">
+        <div class="d-flex w-50 column align-items-center justify-content-start">
+          <div class="d-flex centered w-100 column">
+            <div *ngFor="let l of lignes" class="w-100 d-flex">
+              <div class="border border-2 m-1 p-1 w-100 rounded d-flex maxImg w-100">
+                <img [src]="'/assets/' + l.article.imageUrl" [alt]="'image de ' + l.article.description" class="maxImg d-flex justify-content-start">
+                <div class="d-flex row justify-content-center align-items-center w-100">
+                  <div class="d-flex row justify-content-center align-items-center w-100">
+                    <h5>{{l.article.marque.toUpperCase()}}</h5>
+                    <div>{{l.article.description}}</div>
+                    <div>{{l.article.prix}}€/article</div>
+                  </div>
+                </div>
+                <div class="d-flex row justify-content-end align-items-center">
+                  <div class="d-flex centered">{{l.quantite}}</div>
+                  <div class="d-flex centered">Prix : {{l.prixLigne}}€</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center w-50">
+            <h4>Prix total : {{ prixTotal }}€</h4>
+            <button class="btn btn-success" (click)="order()">Valider le panier</button>
+          </div>
+      </div>
     </div>
+  </div>
 </div>

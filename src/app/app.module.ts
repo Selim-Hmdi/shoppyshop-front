@@ -14,7 +14,6 @@ import { CategoryComponent } from './category/category.component';
 import { FilterPipePipe } from './filter-pipe.pipe';
 import { PanierComponent } from './panier/panier.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
