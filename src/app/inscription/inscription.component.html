@@ -1,26 +1,34 @@
 <div class="container pt-4 pb-4">
   <div class="row d-flex justify-content-sm-center ">
     <div class="col-md-5">
-      <form class="border border-2 rounded w-700 p-3">
+      <form #addForm="ngForm" (ngSubmit)="signIn(addForm)" class="border border-2 rounded w-700 p-3">
+        <div *ngIf="errorMessage">
+          <p class="alert alert-danger">{{errorMessage}}</p>
+        </div>
         <h4 class="text-center mb-3">Nouveau client ? Inscrivez-vous !</h4>
         <div class="form-group">
-          <input type="text" class="w-100 form-control" placeholder="Entrez votre email">
+          <input type="text" class="w-100 form-control" placeholder="Entrez votre nom" id="nom" [(ngModel)]="user.nom"
+            name="nom" required>
         </div>
+        <br>
         <div class="form-group">
-          <input type="text" class="w-100 form-control" placeholder="Entrez votre mot de passe">
+          <input type="text" class="w-100 form-control" placeholder="Entrez votre prénom" id="prenom"
+            [(ngModel)]="user.prenom" name="prenom" required>
         </div>
+        <br>
         <div class="form-group">
-          <input type="text" class="w-100 form-control" placeholder="Entrez votre nom">
+          <input type="email" class="w-100 form-control" placeholder="Entrez votre email" id="email"
+            [(ngModel)]="user.email" name="email" required ngModel email>
         </div>
+        <br>
         <div class="form-group">
-          <input type="text" class="w-100 form-control" placeholder="Entrez votre prénom">
+          <input type="password" class="w-100 form-control" placeholder="Entrez votre mot de passe" id="password"
+            [(ngModel)]="user.password" name="password" required minlength="8">
         </div>
-        <div class="form-group">
-          <input type="text" class="w-100 form-control" placeholder="Entrez votre adresse">
-        </div>
-          <div class="form group mb-3 d-flex justify-content-center ">
+        <br>
+        <div class="form group mb-3 d-flex justify-content-center ">
           <div class="form-group w-100 mt-2">
-            <button (click)="signIn()">S'inscrire</button>
+            <button [disabled]="addForm.invalid" class="btn btn-success" type="submit">S'inscrire</button>
             <div class="mt-2">
               <span>Déjà inscrit chez nous ? <a routerLink="/connexion">Se connecter</a></span>
             </div>
