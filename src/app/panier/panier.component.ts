@@ -37,12 +37,17 @@ export class PanierComponent implements OnInit {
   }
 
   order() {
-    let commande = new Commande(0, "", 1);
+    if(!sessionStorage.getItem("user")) {
+      this.router.navigate(["/inscription"]);
+      return;
+    }
 
+    let user: User = JSON.parse(sessionStorage.getItem("user"));
+    let commande: Commande = new Commande(user.id);
     for(let ligne of this.lignes) {
       commande.addLigne(ligne);
     }
-
+    console.log(commande);
     this.restService.createCommande(commande);
   }
 }
