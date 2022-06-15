@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Commande } from './commande';
 
 @Injectable({
   providedIn: 'root',
@@ -18,5 +19,24 @@ export class RestService {
         console.error(failureResponse);
       }
     );
+  }
+
+  createCommande(commande: Commande) {
+    const body = JSON.stringify(commande);
+    const url = "http://localhost:8080/commandes/add/" + commande.userId;
+    this.http.post(url, body, {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    }).subscribe(
+      response => {
+        console.log("POST request success");        
+      },
+
+      failure => {
+        console.error("Failed POST request at : " + url);
+        console.error(failure); 
+      }
+    )
   }
 }

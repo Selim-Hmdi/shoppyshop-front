@@ -29,11 +29,14 @@ export class PanierComponent implements OnInit {
       this.lignes.push(new Ligne(articles[i], i+1));
     }
   }
+
   order() {
-    let commande = new Commande();
+    let commande = new Commande(0, "", 1);
 
     for(let ligne of this.lignes) {
-
+      commande.addLigne(ligne);
     }
+    
+    this.restService.createCommande(commande);
   }
 }
