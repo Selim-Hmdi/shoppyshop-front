@@ -23,6 +23,8 @@ export class InscriptionComponent implements OnInit {
     this.userService.createUser(addForm.value).subscribe(
       data => {
         this.userExists = false;
+        let currentUser = JSON.stringify(this.user);
+        sessionStorage.setItem("user", currentUser);
         this.goToHomePage();
       }, (error) => {
         if (this.userExists) {
