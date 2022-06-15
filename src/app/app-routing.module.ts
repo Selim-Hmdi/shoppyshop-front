@@ -4,16 +4,19 @@ import { HomeComponent } from './home/home.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { CategoryComponent } from './category/category.component';
+import { PanierComponent } from './panier/panier.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'connexion', component: ConnexionComponent },
   { path: 'inscription', component: InscriptionComponent },
   { path: 'article/:categorie', component: CategoryComponent },
+  { path: 'home',  component: HomeComponent },
+  { path: 'panier', component: PanierComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }
