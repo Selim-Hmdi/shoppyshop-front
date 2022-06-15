@@ -27,8 +27,10 @@ export class InscriptionComponent implements OnInit {
       }, (error) => {
         if (this.userExists) {
           this.errorMessage = "Un utilisateur existe déjà avec cette adresse email";
+          this.user = new User();
         } else {
           this.errorMessage = error;
+          this.user = new User();
         }
       });
   }
