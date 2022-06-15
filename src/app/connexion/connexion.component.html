@@ -1,19 +1,28 @@
 <div class="container pt-4 pb-4">
   <div class="row d-flex justify-content-sm-center ">
     <div class="col-md-5">
-      <form class="border border-2 rounded w-700 p-3">
-        <h4 class="text-center mb-3">Déjà client chez nous ? Connectez-vous !</h4>
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Votre email">
+      <form (ngSubmit)="onSubmit()" class="border border-2 rounded w-700 p-3">
+        <div *ngIf="errorMessage">
+          <p class="alert alert-danger">{{errorMessage}}</p>
         </div>
+        <h4 class="text-center mb-3">Déjà client ? Connectez-vous !</h4>
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Votre mot de passe">
+          <label>Email </label>
+          <input type="text" class="w-100 form-control" placeholder="Entrez votre email" id="email" [(ngModel)]="email"
+            name="email">
         </div>
+        <br>
+        <div class="form-group">
+          <label>Password </label>
+          <input type="password" class="w-100 form-control" placeholder="Entrez votre mot de passe" id="password"
+            [(ngModel)]="password" name="password">
+        </div>
+        <br>
         <div class="form group mb-3 d-flex justify-content-center ">
-          <div class="w-100 mt-2">
-            <button class="btn btn-primary" (click)="connect()">Se Connecter</button>
+          <div class="form-group w-100 mt-2">
+            <button class="btn btn-success w-100" type="submit">Se connecter</button>
             <div class="mt-2">
-              <span>Pas encore inscrit chez nous ? <a routerLink="/inscription">S'inscrire</a></span>
+              <span>Nouveau client ? <a routerLink="/inscription">S'inscrire</a></span>
             </div>
           </div>
         </div>
