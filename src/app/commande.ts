@@ -9,18 +9,23 @@ export class Commande {
     version: number;
 
 
-    constructor(id?,  infos?, userId = 0) {
-        if(id) this.id = id;
-        if(infos) this.infos = infos;
+    constructor(userId?) {
         this.lignes = new Array<Ligne>();
         this.userId = userId;
+        this.infos = "";
+        this.prixTotal = 0;
+        this.version = 0;
+        this.id = 0;
     }
 
     addLigne(ligne: Ligne): void {
         this.lignes.push(ligne);
+        this.formatLigneToInfo(ligne);
+        this.prixTotal += ligne.prixLigne;
     }
 
-    formatInfos() {
-        
+    formatLigneToInfo(ligne: Ligne): void {
+        this.infos += "[" + ligne.article.id + "-" + 
+        ligne.quantite + "]/";  
     }
 }

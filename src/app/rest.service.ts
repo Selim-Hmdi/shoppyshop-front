@@ -30,7 +30,8 @@ export class RestService {
       })
     }).subscribe(
       response => {
-        console.log("POST request success");        
+        console.log("POST request success");
+        sessionStorage.removeItem("panier");             
       },
 
       failure => {
