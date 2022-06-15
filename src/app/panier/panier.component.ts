@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { Article } from '../article';
+import { Commande } from '../commande';
 import { Ligne } from '../ligne';
 import { RestService } from '../rest.service';
 
@@ -29,6 +30,10 @@ export class PanierComponent implements OnInit {
     }
   }
   order() {
+    let commande = new Commande();
 
+    for(let ligne of this.lignes) {
+
+    }
   }
 }

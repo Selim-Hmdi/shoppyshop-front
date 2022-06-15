@@ -7,12 +7,12 @@ export class Article {
   imageUrl: string;
 
   constructor(
-    id: number,
-    categorie: string,
-    marque: string,
-    description: string,
-    prix: number,
-    imageUrl: string
+    id?: number,
+    categorie?: string,
+    marque?: string,
+    description?: string,
+    prix?: number,
+    imageUrl?: string
   ) {
     this.id = id;
     this.marque = marque;
