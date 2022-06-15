@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Article } from '../article';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,12 +11,13 @@ export class HeaderComponent implements OnInit {
   categorie: string;
   articles: Array<Article>;
   searchText: any;
-  constructor() {  }
+  constructor(private router : Router) {  }
 
   ngOnInit(): void {
   }
 
   logout() {
-
+    sessionStorage.removeItem("user");
+    this.router.navigate(['']);
   }
 }
