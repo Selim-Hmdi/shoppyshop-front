@@ -12,6 +12,7 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { CategoryComponent } from './category/category.component';
 import { FilterPipePipe } from './filter-pipe.pipe';
+import { PanierComponent } from './panier/panier.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FilterPipePipe } from './filter-pipe.pipe';
     ConnexionComponent,
     InscriptionComponent,
     CategoryComponent,
-    FilterPipePipe
+    FilterPipePipe,
+    PanierComponent
   ],
   imports: [
     BrowserModule,

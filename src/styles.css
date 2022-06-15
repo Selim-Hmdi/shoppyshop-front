@@ -97,9 +97,12 @@ width: 30px;
   color: #112031;
 }
 
+.maxSize, .maxImg {
+  max-height: 100px;
+}
+
 .maxSize {
   max-width: 100px;
-  max-height: 100px;
 }
 
 .footer-first li
