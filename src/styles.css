@@ -13,6 +13,7 @@
 }
 
 .page-content {
+  margin-top: 70px;
   flex: 1; /** récupère l'espace disponible restant **/
 }
 
@@ -74,6 +75,16 @@ width: 30px;
 }
 
 /* || menu */
+.menuFixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 70px;
+}
+
 .sizeLogo {
   max-width: 60px;
 }
