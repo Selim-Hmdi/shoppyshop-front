@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Article } from '../article';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { FileUploadService } from '../file-upload.service';
 import { User } from '../user';
 
 @Component({

@@ -13,7 +13,7 @@ export class InscriptionComponent implements OnInit {
   user: User = new User();
   errorMessage = "";
   userExists: boolean = true;
-
+  login: User;
   constructor(private userService: UserserviceService, private router: Router) { }
 
   ngOnInit(): void {
