@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Article } from '../article';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { User } from '../user';
@@ -21,7 +20,6 @@ export class ArticleUpdateComponent implements OnInit {
     if (sessionStorage.getItem("user") != null) {
       this.login = JSON.parse(sessionStorage.getItem("user"));
       if (this.login.nom == "admin") {
-        // this.id = this.route.snapshot.paramMap.get('id');
         this.route.params.subscribe(params => {
             this.id = params['id'];
         });
@@ -38,19 +36,22 @@ export class ArticleUpdateComponent implements OnInit {
     }
   }
 
-  updateArticle() {
+  updateArticle(marque, id) {
     // modifie le contenu
     const body = JSON.stringify(this.article);
-    this.http.put(this.url, body, {
+    this.http.put(this.url + id, body, {
       headers: new HttpHeaders({
         "Content-Type": "application/json"
       })
     }).subscribe(
       response => {
+        this.article = response;
         this.router.navigate(['/article']);
       },
       err => {
-        this.message = "ko modification article " + this.article.marque;
+        console.log(err);
+        console.log(this.article);
+        this.message = "ko modification article " + marque;
       }
     );
   }

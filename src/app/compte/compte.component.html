@@ -1,0 +1,46 @@
+<div class="d-flex centered column mt-5">
+  {{ message }}
+  <div class="border border-2 rounded w-50 column p-3">
+    <h3 class="d-flex centered">Mon compte</h3>
+    <div class="form-row d-flex w-100">
+      <div class="form-group w-50">
+        <label for="lastname">Nom</label>
+        <input type="text" class="form-control" id="lastname"  *ngIf="login.nom != 'admin'" [(ngModel)]="login.nom">
+        <input type="text" class="form-control" id="lastname" readonly  *ngIf="login.nom == 'admin'" [(ngModel)]="login.nom">
+      </div>
+      <div class="form-group w-50">
+        <label for="firstname">Prénom</label>
+        <input type="text" class="form-control" id="firstname" [(ngModel)]="login.prenom">
+      </div>
+    </div>
+    <div class="form-row d-flex w-100">
+      <div class="form-group w-50">
+        <label for="email">Mail</label>
+        <input type="text" readonly class="form-control" id="email" [(ngModel)]="login.email">
+      </div>
+      <div class="form-group w-50">
+        <label for="phone">Portable</label>
+        <input type="text" class="form-control" id="phone" [(ngModel)]="login.telephone">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="adress">Adresse</label>
+      <input type="text" class="form-control" id="adress" [(ngModel)]="login.adresse">
+    </div>
+    <div class="form-row d-flex w-100">
+      <div class="form-group w-50">
+        <label for="city">Ville</label>
+        <input type="text" class="form-control" id="city" [(ngModel)]="login.ville">
+      </div>
+      <div class="form-group w-50">
+        <label for="country">Pays</label>
+        <input type="text" class="form-control" id="country" [(ngModel)]="login.pays">
+      </div>
+    </div>
+    <div class="form-group w-100 mb-3 d-flex justify-content-center">
+      <div class="w-100 mt-2">
+        <button class="btn btn-primary w-100" (click)="updateUser(login.id, login.nom)">Modifier</button>
+      </div>
+    </div>
+  </div>
+</div>

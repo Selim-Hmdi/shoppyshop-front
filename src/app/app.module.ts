@@ -16,6 +16,7 @@ import { PanierComponent } from './panier/panier.component';
 import { ArticleComponent } from './article/article.component';
 import { ArticleCreateComponent } from './article-create/article-create.component';
 import { ArticleUpdateComponent } from './article-update/article-update.component';
+import { CompteComponent } from './compte/compte.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ArticleUpdateComponent } from './article-update/article-update.componen
     PanierComponent,
     ArticleComponent,
     ArticleCreateComponent,
-    ArticleUpdateComponent
+    ArticleUpdateComponent,
+    CompteComponent
   ],
   imports: [
     BrowserModule,
