@@ -12,7 +12,7 @@ export class Commande {
     constructor(userId?) {
         this.lignes = new Array<Ligne>();
         this.userId = userId;
-        this.infos = "toto";
+        this.infos = "";
         this.prixTotal = 0;
         this.version = 0;
         this.id = 0;
