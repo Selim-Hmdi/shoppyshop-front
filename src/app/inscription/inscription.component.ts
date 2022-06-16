@@ -14,7 +14,6 @@ export class InscriptionComponent implements OnInit {
   errorMessage = "";
   userExists: boolean = true;
   login: User;
-
   constructor(private userService: UserserviceService, private router: Router) { }
 
   ngOnInit(): void {
