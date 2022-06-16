@@ -10,7 +10,7 @@ import { User } from '../user';
 })
 export class ArticleUpdateComponent implements OnInit {
   article: any;
-  message: string;
+  errorMessage: string;
   id: any;
   url: string = "http://localhost:8080/articles/";
   login: User;
@@ -51,7 +51,7 @@ export class ArticleUpdateComponent implements OnInit {
       err => {
         console.log(err);
         console.log(this.article);
-        this.message = "ko modification article " + marque;
+        this.errorMessage = "ko modification article " + marque;
       }
     );
   }

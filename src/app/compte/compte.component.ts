@@ -11,6 +11,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class CompteComponent implements OnInit {
   login: User;
   message: string;
+  errorMessage: string;
   url: string = "http://localhost:8080/users/";
   constructor(private router: Router, private http: HttpClient) { }
 
@@ -34,7 +35,7 @@ export class CompteComponent implements OnInit {
         this.message = "Votre compte a été mis à jour";
       },
       err => {
-        this.message = "ko modification user " + nom.toUpperCase();
+        this.errorMessage = "ko modification user " + nom.toUpperCase();
       }
     );
   }

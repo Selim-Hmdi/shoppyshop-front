@@ -12,6 +12,7 @@ export class ArticleCreateComponent implements OnInit {
   url: string = "http://localhost:8080/articles";
   article = {id: 0, marque: "", prix: 0, description: "", categorie: "", imageUrl: ""};
   message: string;
+  errorMessage: string;
   login: User;
   constructor(private http: HttpClient, private router: Router) { }
   ngOnInit(): void {
@@ -33,10 +34,10 @@ export class ArticleCreateComponent implements OnInit {
       })
     }).subscribe(
       response => {
-        this.message = "article créé";
+        this.message = "Nouvel article créé";
       },
       err => {
-        this.message = "ko";
+        this.errorMessage = "ko";
       }
     );
   }

@@ -1,5 +1,10 @@
-<div class="d-flex centered column mt-5">
-  {{ message }}
+<div class="d-flex centered column pb-4 mt-5">
+  <div *ngIf="message">
+    <div class="alert alert-success">{{ message }}</div>
+  </div>
+  <div *ngIf="errorMessage">
+    <div class="alert alert-danger">{{ errorMessage }}</div>
+  </div>
   <div class="border border-2 rounded w-50 column p-3">
     <h3 class="d-flex centered">Créer un article</h3>
       <div class="form-group">

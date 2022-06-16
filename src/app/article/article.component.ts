@@ -15,6 +15,8 @@ export class ArticleComponent implements OnInit {
   url: string = "http://localhost:8080/articles/";
   unique: Array<any>;
   message: string;
+  errorMessage: string;
+  infoMessage: string;
   id: number;
   login: User;
   constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { }
@@ -49,7 +51,7 @@ export class ArticleComponent implements OnInit {
         this.articles = response;
       },
       err => {
-        this.message = "ko affichage";
+        this.errorMessage = "ko affichage";
       }
     );
   }
@@ -70,11 +72,11 @@ export class ArticleComponent implements OnInit {
           this.init();
         },
         err => {
-          this.message = "ko suppression";
+          this.errorMessage = "ko suppression";
         }
       );
     } else {
-      this.message = "Annulation suppression article " + marque.toUpperCase();
+      this.infoMessage = "Annulation suppression article " + marque.toUpperCase();
     }
   }
 

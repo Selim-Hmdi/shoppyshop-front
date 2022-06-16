@@ -3,7 +3,7 @@
     <div class="col-md-5">
       <form #addForm="ngForm" (ngSubmit)="signIn(addForm)" class="border border-2 rounded w-700 p-3">
         <div *ngIf="errorMessage">
-          <p class="alert alert-danger">{{errorMessage}}</p>
+          <div class="alert alert-danger">{{errorMessage}}</div>
         </div>
         <h4 class="text-center mb-3">Nouveau client ? Inscrivez-vous !</h4>
         <div class="form-group">

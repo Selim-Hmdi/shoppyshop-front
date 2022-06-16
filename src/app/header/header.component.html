@@ -1,41 +1,35 @@
 <header>
 	<div class="menu menuFixed bckColor p-0">
-		<nav class="navbar navbar-expand-lg navbar-light bckColor p-0">
-			<div class="container-fluid mr-2">
-				<a class="navbar-brand p-0" routerLink="/">
-					<img src="/assets/picture/logo-pf.png" alt="logo ShoppyShop"
-						class="nav-link radiusBorder sizeLogo p-0 m-1">
-				</a>
-				<ul *ngIf="!isLoggedin" class="nav justify-content-end">
-					<!-- si pas connecté -->
-					<li class="nav-item">
-						<!-- <li class="nav-item"> -->
-						<a class="nav-link text-white" routerLink="/connexion">Se Connecter</a>
-					</li>
-				</ul>
-				<ul *ngIf="isLoggedin && !isAdmin" class="nav justify-content-end">
-					<div class="d-flex">
-						<!-- si connecté -->
-						<li class="nav-item"><a class="nav-link text-white" routerLink="/compte">Mon compte</a></li>
-						<li class="nav-item"><a class="nav-link text-white" routerLink="/commande">Mes commandes</a>
-						</li>
-						<li class="nav-item"><a class="nav-link text-white" routerLink="/panier">Mon panier</a></li>
-						<button class="btn btn-outline-warning text-white" (click)="logout()">Déconnexion</button>
-					</div>
-				</ul>
-				<ul *ngIf="isAdmin" class="nav justify-content-end">
-					<div class="d-flex">
-						<!-- si connecté en mode Admin -->
-						<li class="nav-item"><a class="nav-link text-white" routerLink="/article">Gestion des
-								articles</a></li>
-						<li class="nav-item"><a class="nav-link text-white" routerLink="/compte">Mon compte</a></li>
-						<li class="nav-item"><a class="nav-link text-white" routerLink="/commande">Mes commandes</a>
-						</li>
-						<li class="nav-item"><a class="nav-link text-white" routerLink="/panier">Mon panier</a></li>
-						<button class="btn btn-outline-warning text-white" (click)="logout()">Déconnexion</button>
-					</div>
-				</ul>
-			</div>
-		</nav>
+	    <nav class="navbar navbar-expand-lg navbar-light bckColor p-0 nav-dark">
+	        <div class="container-fluid mr-2">
+	            <a class="navbar-brand p-0" routerLink="/">
+                  <img src="/assets/picture/logo-pf.png" alt="logo ShoppyShop" class="nav-link radiusBorder sizeLogo p-0 m-1">
+              </a>
+              <!-- si pas connecté -->
+	            <ul *ngIf="!isLoggedin" class="nav justify-content-end">
+                <li class="nav-item">
+                  <a class="nav-link text-white" routerLink="/connexion">Se Connecter</a>
+                </li>
+              </ul>
+              <!-- si connecté -->
+              <ul *ngIf="isLoggedin && !isAdmin" class="nav justify-content-end">
+                <div class="d-flex">
+                  <li class="nav-item"><a class="nav-link text-white" routerLink="/compte">Mon compte</a></li>
+                  <li class="nav-item"><a class="nav-link text-white" routerLink="/panier">Mon panier</a></li>
+                  <button class="btn btn-outline-warning text-white" (click)="logout()">Déconnexion</button>
+                </div>
+              </ul>
+              <!-- si connecté en mode Admin -->
+              <ul *ngIf="isAdmin" class="nav justify-content-end">
+                <div class="d-flex">
+                  <li class="nav-item"><a class="nav-link text-white" routerLink="/article">Gestion des
+                      articles</a></li>
+                  <li class="nav-item"><a class="nav-link text-white" routerLink="/compte">Mon compte</a></li>
+                  <li class="nav-item"><a class="nav-link text-white" routerLink="/panier">Mon panier</a></li>
+                  <button class="btn btn-outline-warning text-white" (click)="logout()">Déconnexion</button>
+                </div>
+              </ul>
+          </div>
+      </nav>
 	</div>
 </header>
