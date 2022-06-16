@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   articles: Array<Article>;
   searchText: any;
   url: string = "http://localhost:8080/articles/";
-  unique: Array<any>;
+  uniqueCategories: Array<string>;
   constructor(private http: HttpClient, private router: Router) { 
     this.articles = new Array<Article>();
   }
@@ -20,13 +20,19 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.http.get<Array<Article>>(this.url).subscribe(response => {
       this.articles = response;
+      this.filterCategories();
     }, err => {
-      console.log("ko server");
+      console.error("Failed GET request at : " + this.url);
     });
-    for (let article of this.articles.values()) {
-      this.unique = Array.from(new Set(article.categorie));
-      console.log(this.unique);
+    
+  }
+
+  filterCategories(): void {
+    let categories = new Array<string>();
+    for (let article of this.articles) {
+      categories.push(article.categorie); 
     }
+   this.uniqueCategories = [...new Set<string>(categories)];
   }
 
 }
