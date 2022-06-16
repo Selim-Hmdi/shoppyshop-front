@@ -13,9 +13,15 @@ export class ConnexionComponent implements OnInit {
   password: string;
   errorMessage = "";
   user: any;
+  login: User;
   constructor(private userService: UserserviceService, private router: Router) { }
 
   ngOnInit(): void {
+    if (sessionStorage.getItem("user") == null) {
+      this.login = JSON.parse(sessionStorage.getItem("user"));
+    } else {
+      this.router.navigate(['']);
+    }
   }
 
   onSubmit() {

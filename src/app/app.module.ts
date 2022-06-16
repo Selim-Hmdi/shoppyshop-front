@@ -13,6 +13,9 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { CategoryComponent } from './category/category.component';
 import { FilterPipePipe } from './filter-pipe.pipe';
 import { PanierComponent } from './panier/panier.component';
+import { ArticleComponent } from './article/article.component';
+import { ArticleCreateComponent } from './article-create/article-create.component';
+import { ArticleUpdateComponent } from './article-update/article-update.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { PanierComponent } from './panier/panier.component';
     InscriptionComponent,
     CategoryComponent,
     FilterPipePipe,
-    PanierComponent
+    PanierComponent,
+    ArticleComponent,
+    ArticleCreateComponent,
+    ArticleUpdateComponent
   ],
   imports: [
     BrowserModule,

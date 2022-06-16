@@ -13,10 +13,16 @@ export class InscriptionComponent implements OnInit {
   user: User = new User();
   errorMessage = "";
   userExists: boolean = true;
+  login: User;
 
   constructor(private userService: UserserviceService, private router: Router) { }
 
   ngOnInit(): void {
+    if (sessionStorage.getItem("user") == null) {
+      this.login = JSON.parse(sessionStorage.getItem("user"));
+    } else {
+      this.router.navigate(['']);
+    }
   }
 
   saveUser(addForm: NgForm) {

@@ -17,12 +17,17 @@ export class PanierComponent implements OnInit {
   user: string;
   lignes: Ligne[];
   prixTotal: number = 0;
-
+  login: User;
   constructor(private restService: RestService, private router: Router) {
     this.lignes = new Array<Ligne>();
   }
 
   ngOnInit(): void {
+    if (sessionStorage.getItem("user") != null) {
+      this.login = JSON.parse(sessionStorage.getItem("user"));
+    } else {
+      this.router.navigate(['']);
+    }
     this.restService.findAllArticles();
     let articles: Article[] = JSON.parse(sessionStorage.getItem("articles"));
     console.log(sessionStorage.getItem("articles"));
@@ -43,7 +48,6 @@ export class PanierComponent implements OnInit {
       commande.addLigne(ligne);
     }
     console.log(commande);
-    
     this.restService.createCommande(commande);
   }
 }

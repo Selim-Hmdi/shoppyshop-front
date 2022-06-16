@@ -1,0 +1,21 @@
+<div class="d-flex column between centered pb-4 pt-4">
+  <h1>Gestion des articles</h1>
+  <button class="w-50 btn btn-success mb-3" [routerLink]="['/article/create']">Ajouter</button>
+  {{ message }}
+  <div class="noBorder card-deck justify-content-center d-flex w-100">
+    <div *ngFor="let article of articles | filter: searchText">
+        <div class="card d-flex centered sizeArticle">
+          <h3 class="card-head">{{ article.marque.toUpperCase() }}</h3>
+          <img [src]="'/assets/' + article.imageUrl" [alt]="'image de ' + article.description" class="card-img-top d-flex centered">
+          <p>{{ article.description }}</p>
+          <div class="d-flex logopnr between align-items-center">
+              <p class="card-text font-weight-bold">{{ article.prix }} €</p>
+          </div>
+          <div class="mb-1">
+            <button class="btn btn-primary" [routerLink]="['/article/update/', article.id]">Modifier</button>
+            <button class="btn btn-danger" (click)="deleteArticle(article.id, article.marque, article.description)">Supprimer</button>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
