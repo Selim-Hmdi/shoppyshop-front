@@ -17,6 +17,7 @@ export class HeaderComponent implements OnInit {
   isLoggedin: boolean = false;
   constructor(private router: Router) {  }
 
+
   ngOnInit(): void {
     this.isLoggedIn();
   }

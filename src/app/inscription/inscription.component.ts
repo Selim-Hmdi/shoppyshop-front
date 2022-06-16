@@ -16,21 +16,13 @@ export class InscriptionComponent implements OnInit {
   login: User;
   constructor(private userService: UserserviceService, private router: Router) { }
 
-  ngOnInit(): void {
-    if (sessionStorage.getItem("user") == null) {
-      this.login = JSON.parse(sessionStorage.getItem("user"));
-    } else {
-      this.router.navigate(['']);
-    }
-  }
+  ngOnInit(): void { }
 
   saveUser(addForm: NgForm) {
     this.userService.createUser(addForm.value).subscribe(
       data => {
         this.userExists = false;
-        let currentUser = JSON.stringify(this.user);
-        sessionStorage.setItem("user", currentUser);
-        this.goToHomePage();
+        this.goToConnectionPage();
       }, (error) => {
         if (this.userExists) {
           this.errorMessage = "Un utilisateur existe déjà avec cette adresse email";
@@ -42,8 +34,8 @@ export class InscriptionComponent implements OnInit {
       });
   }
 
-  goToHomePage() {
-    this.router.navigate(['']);
+  goToConnectionPage() {
+    this.router.navigate(['connexion']);
   }
 
   signIn(addForm: NgForm) {

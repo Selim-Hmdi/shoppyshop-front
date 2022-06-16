@@ -13,7 +13,9 @@ export class HomeComponent implements OnInit {
   searchText: any;
   url: string = "http://localhost:8080/articles/";
   unique: Array<any>;
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) { 
+    this.articles = new Array<Article>();
+  }
 
   ngOnInit(): void {
     this.http.get<Array<Article>>(this.url).subscribe(response => {
