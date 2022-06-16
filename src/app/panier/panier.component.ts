@@ -25,23 +25,27 @@ export class PanierComponent implements OnInit {
   ngOnInit(): void {
     if (sessionStorage.getItem("user") != null) {
       this.login = JSON.parse(sessionStorage.getItem("user"));
+      this.restService.findAllArticles();
+      let articles: Article[] = JSON.parse(sessionStorage.getItem("articles"));
+      for(let i = 0; i < articles.length; i++) {
+        let ligne = new Ligne(articles[i], 0);
+        this.lignes.push(ligne);
+      }
     } else {
       this.router.navigate(['']);
     }
-    this.restService.findAllArticles();
-    let articles: Article[] = JSON.parse(sessionStorage.getItem("articles"));
-    console.log(sessionStorage.getItem("articles"));
-    for(let i = 0; i < articles.length; i++) {
-      this.lignes.push(new Ligne(articles[i], i+1));
+  }
+
+  mngQuantity(ligne){
+    ligne.prixLigne = ligne.quantite * ligne.article.prix;
+    let prix: number = 0;
+    for (ligne of this.lignes) {
+      prix += ligne.prixLigne;
     }
+    this.prixTotal = prix;
   }
 
   order() {
-    if(!sessionStorage.getItem("user")) {
-      this.router.navigate(["/inscription"]);
-      return;
-    }
-
     let user: User = JSON.parse(sessionStorage.getItem("user"));
     let commande: Commande = new Commande(user.id);
     for(let ligne of this.lignes) {

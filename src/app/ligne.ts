@@ -5,9 +5,10 @@ export class Ligne {
   quantite: number;
   prixLigne: number;
 
-  constructor(article: Article, quantite: number) {
+  constructor(article?: Article, quantite?: number) {
       this.article = article;
       this.quantite = quantite;
       this.prixLigne = this.quantite * this.article.prix;
   }
 }
+
