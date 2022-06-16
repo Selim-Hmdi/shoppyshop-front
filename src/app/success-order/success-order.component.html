@@ -1,0 +1,12 @@
+<div id="fondecran" class="imgBckgd h-100 p-3">
+  <div class="p-5">
+    <h2 class="text-center align-middle p-5">Félicitations
+      <h1 *ngIf="login.nom != 'admin'">{{ login.nom }} {{ login.prenom }}</h1>
+      <h1 *ngIf="login.nom == 'admin'">{{ login.nom }}</h1>
+      !!!!</h2>
+    <h3 class="text-center align-middle p-5">On a bien reçu votre commande !</h3>
+  </div>
+  <h5 class="text-center p-5 align-middle">Vous recevrez votre commande dans 1000 ans.<br>Nous vous remercions pour votre patience ;-)</h5>
+</div>
+
+

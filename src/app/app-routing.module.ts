@@ -9,12 +9,14 @@ import { ArticleComponent } from './article/article.component';
 import { ArticleCreateComponent } from './article-create/article-create.component';
 import { ArticleUpdateComponent } from './article-update/article-update.component';
 import { CompteComponent } from './compte/compte.component';
+import { SuccessOrderComponent } from './success-order/success-order.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'connexion', component: ConnexionComponent },
   { path: 'inscription', component: InscriptionComponent },
   { path: 'panier', component: PanierComponent },
+  { path: 'successOrder', component: SuccessOrderComponent },
   { path: 'compte', component: CompteComponent },
   { path: 'article', component: ArticleComponent },
   { path: 'article/create', component: ArticleCreateComponent },

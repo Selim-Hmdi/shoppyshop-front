@@ -17,6 +17,7 @@ import { ArticleComponent } from './article/article.component';
 import { ArticleCreateComponent } from './article-create/article-create.component';
 import { ArticleUpdateComponent } from './article-update/article-update.component';
 import { CompteComponent } from './compte/compte.component';
+import { SuccessOrderComponent } from './success-order/success-order.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CompteComponent } from './compte/compte.component';
     ArticleComponent,
     ArticleCreateComponent,
     ArticleUpdateComponent,
-    CompteComponent
+    CompteComponent,
+    SuccessOrderComponent
   ],
   imports: [
     BrowserModule,
