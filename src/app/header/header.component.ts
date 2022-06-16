@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
   searchText: any;
   user: User;
   isLoggedin: boolean = false;
+  isAdmin: boolean = false;
   constructor(private router: Router) {  }
 
 
@@ -24,16 +25,21 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     sessionStorage.removeItem("user");
+    sessionStorage.removeItem("admin");
     this.isLoggedin = false;
+    this.isAdmin = false;
     this.router.navigate(['']);
   }
 
   isLoggedIn() {
-    if (localStorage.getItem("user") != null) {
+    if (sessionStorage.getItem("user") != null) {
       this.isLoggedin = true;
-      return this.isLoggedin;
+      if(sessionStorage.getItem("admin") != null) {
+        this.isAdmin = true;
+      }
     } else {
-      return this.isLoggedin = false;
+      this.isLoggedin = false;
+      this.isAdmin = false;
     }
   }
 }

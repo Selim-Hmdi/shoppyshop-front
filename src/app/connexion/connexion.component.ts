@@ -31,6 +31,8 @@ export class ConnexionComponent implements OnInit {
         this.user = data;
         let currentUser = JSON.stringify(this.user);
         sessionStorage.setItem("user", currentUser);
+        if(this.user.nom == 'admin')
+          sessionStorage.setItem("admin", "true");
         console.log(this.user);
         this.goToHomePage();
       }, (error) => {
@@ -44,6 +46,7 @@ export class ConnexionComponent implements OnInit {
 
   goToHomePage() {
     this.router.navigate(['']);
+    location.reload();
   }
 
 }
