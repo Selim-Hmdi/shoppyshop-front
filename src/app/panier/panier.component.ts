@@ -53,5 +53,6 @@ export class PanierComponent implements OnInit {
     }
     console.log(commande);
     this.restService.createCommande(commande);
+    this.router.navigate(['/successOrder']);
   }
 }
