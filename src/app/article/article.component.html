@@ -1,6 +1,6 @@
 <div class="d-flex column between centered pb-4 pt-4">
   <h1>Gestion des articles</h1>
-  <button class="w-50 btn btn-success mb-3" [routerLink]="['/article/create']">Ajouter</button>
+  <button class="w-100 btn btn-success mb-3" [routerLink]="['/article/create']">Ajouter</button>
   <div *ngIf="message">
     <div class="alert alert-success">{{ message }}</div>
   </div>
@@ -10,15 +10,15 @@
   <div *ngIf="infoMessage">
     <div class="alert alert-info">{{ infoMessage }}</div>
   </div>
-  <div class="noBorder card-deck justify-content-center d-flex w-100">
-    <div *ngFor="let article of articles | filter: searchText">
-        <div class="card d-flex centered sizeArticle">
-          <h3 class="card-head">{{ article.marque.toUpperCase() }}</h3>
+  <div class="noBorder card-deck justify-content-center d-flex w-100 flex-wrap">
+    <div *ngFor="let article of articles">
+      <div class="card d-flex align-items-center sizeArticle">
+          <h3 class="card-head text-center">{{ article.marque.toUpperCase() }}</h3>
           <img [src]="'/assets/' + article.imageUrl" [alt]="'image de ' + article.description" class="card-img-top d-flex centered">
-          <p>{{ article.description }}</p>
-          <div class="d-flex logopnr between align-items-center">
-              <p class="card-text font-weight-bold">{{ article.prix }} €</p>
+          <div class="d-flex row logopnr align-items-center">
+            <h5 class="card-text text-center font-weight-bold float-left">{{ article.prix }}€</h5>
           </div>
+          <p class="m-0 p-2 sizeArticle text-left text-truncate">{{ article.description }}</p>
           <div class="mb-1">
             <button class="btn btn-primary" [routerLink]="['/article/update/', article.id]">Modifier</button>
             <button class="btn btn-danger" (click)="deleteArticle(article.id, article.marque, article.description)">Supprimer</button>

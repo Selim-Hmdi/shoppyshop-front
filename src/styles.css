@@ -147,6 +147,11 @@ width: 30px;
   max-height: 100px;
 }
 
+.maxImg {
+  max-width : 100px;
+  object-fit: contain;
+}
+
 .maxSize {
   max-width: 100px;
 }
